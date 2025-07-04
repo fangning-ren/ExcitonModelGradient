@@ -79,4 +79,4 @@ Run the jupyter notebook `predict_large_aggregates.ipynb` to evaluate the model'
 Run the jupyter notebook `predict_oscillator_strength.ipynb` to estimate the oscillator strength based on ML-model trained results. 
 
 ## Citation
-For more details, refer to our [paper](https://doi.org/10.26434/chemrxiv-2024-x5ljd).
+For more details, refer to our [paper](https://pubs.acs.org/doi/10.1021/acs.jpclett.4c03548).
