@@ -1,0 +1,21 @@
+jobname        tetracene
+coordinates    tetracene.xyz
+run            energy
+scrdir         scr-tetracene
+gpus           1
+method         wb97xd3
+basis          6-31gs
+charge         0
+spinmult       1
+sphericalbasis yes
+scf            diis+a
+precision      dynamic
+dftgrid        1
+dynamicgrid    no
+dispersion     d3
+cis            yes
+cisnumstates   5
+cismult        1
+cismax         25
+cisprintthresh 0.01
+end

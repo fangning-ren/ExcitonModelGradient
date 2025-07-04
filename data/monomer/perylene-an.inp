@@ -1,0 +1,16 @@
+jobname        perylene
+coordinates    perylene.xyz
+run            energy
+scrdir         scr-an-perylene
+gpus           1
+method         uwb97xd3
+basis          6-31gs
+charge         -1
+spinmult       2
+sphericalbasis yes
+scf            diis+a
+precision      dynamic
+dftgrid        1
+dynamicgrid    no
+resp          yes
+end

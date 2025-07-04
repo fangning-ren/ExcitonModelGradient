@@ -1,0 +1,605 @@
+Startfile from command line: perylene.inp
+
+
+       ***********************************************************
+       *                    TeraChem v1.9-2021.10-dev            *
+       *                 Hg Version:                             *
+       *                   Development Version                   *
+       *           Chemistry at the Speed of Graphics!           *
+       ***********************************************************
+       * This program may only be used in connection with        *
+       * a valid license from PetaChem, LLC. Use of this program *
+       * or results thereof indicates acceptance of all terms    *
+       * and conditions stated in the license and that a valid   *
+       * license agreement between the user and PetaChem, LLC    *
+       * exists. PetaChem, LLC does not warrant the correctness  *
+       * of results or their suitability for any purpose.        *
+       * Please email bugs, suggestions, and comments to         *
+       *                  help@petachem.com                      *
+       *                                                         *
+       ***********************************************************
+
+
+       ***********************************************************
+       *  Compiled by fangliu      Wed Mar 23 00:09:47 EDT 2022  *
+       *  Supported architectures: sm_86                         *
+       *  Build cuda_11.4.r11.4/compiler.30033411_0              *
+       ***********************************************************
+
+
+ Job started   Wed Jan 24 11:33:39 2024
+ On node4 (available memory: 42955 MB)
+
+######################################### RUNTIME INFO ##########################################
+terachem perylene.inp 
+
+NVRM version: NVIDIA UNIX x86_64 Kernel Module  470.42.01  Tue Jun 15 21:26:37 UTC 2021
+GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) 
+
+	linux-vdso.so.1 =>  (0x00007ffc53c8f000)
+	libcurl.so.4 => /lib64/libcurl.so.4 (0x00007f253f682000)
+	libmpi.so.12 => /usr/local/mpi/gcc/mpich2-3.4.2/lib/libmpi.so.12 (0x00007f253e846000)
+	libdftbplus.so => /opt/terachem/build_cbbdc78/lib/libdftbplus.so (0x00007f253e313000)
+	libfsockets.so => /opt/terachem/build_cbbdc78/lib/libfsockets.so (0x00007f253e10f000)
+	libxmlf90.so => /opt/terachem/build_cbbdc78/lib/libxmlf90.so (0x00007f253dee9000)
+	libthcbox.so.1 => /opt/terachem/build_cbbdc78/lib/libthcbox.so.1 (0x00007f253d405000)
+	libgpubox.so.1 => /opt/terachem/build_cbbdc78/lib/libgpubox.so.1 (0x00007f253d1ed000)
+	libtensorbox.so.1 => /opt/terachem/build_cbbdc78/lib/libtensorbox.so.1 (0x00007f253cfcc000)
+	libiobox.so.1 => /opt/terachem/build_cbbdc78/lib/libiobox.so.1 (0x00007f253cdb8000)
+	libmoleculebox.so.1 => /opt/terachem/build_cbbdc78/lib/libmoleculebox.so.1 (0x00007f253cba1000)
+	libintbox.so.1 => /opt/terachem/build_cbbdc78/lib/libintbox.so.1 (0x00007f2534223000)
+	libsqmbox.so.1 => /opt/terachem/build_cbbdc78/lib/libsqmbox.so.1 (0x00007f2533cc5000)
+	libgridbox.so.1 => /opt/terachem/build_cbbdc78/lib/libgridbox.so.1 (0x00007f2533981000)
+	libdftbox.so.1 => /opt/terachem/build_cbbdc78/lib/libdftbox.so.1 (0x00007f25336a0000)
+	libcibox.so.1 => /opt/terachem/build_cbbdc78/lib/libcibox.so.1 (0x00007f2533246000)
+	libccbox.so.1 => /opt/terachem/build_cbbdc78/lib/libccbox.so.1 (0x00007f2532df0000)
+	libsimbox.so.1 => /opt/terachem/build_cbbdc78/lib/libsimbox.so.1 (0x00007f2532bd3000)
+	liboptbox.so.1 => /opt/terachem/build_cbbdc78/lib/liboptbox.so.1 (0x00007f253298e000)
+	libsandboxbox.so.1 => /opt/terachem/build_cbbdc78/lib/libsandboxbox.so.1 (0x00007f253277d000)
+	libcuda.so.1 => /lib64/libcuda.so.1 (0x00007f2531021000)
+	libcudart.so.11.0 => /opt/terachem/build_cbbdc78/lib/libcudart.so.11.0 (0x00007f2530d80000)
+	libcublas.so.11 => /opt/terachem/build_cbbdc78/lib/libcublas.so.11 (0x00007f25289a0000)
+	libcufft.so.10 => /opt/terachem/build_cbbdc78/lib/libcufft.so.10 (0x00007f2512d21000)
+	libcusparse.so.11 => /opt/terachem/build_cbbdc78/lib/libcusparse.so.11 (0x00007f2504911000)
+	libcrypto.so.10 => /lib64/libcrypto.so.10 (0x00007f25044ae000)
+	libssl.so.10 => /lib64/libssl.so.10 (0x00007f250423c000)
+	libstdc++.so.6 => /home/fren5/psi4conda/lib/libstdc++.so.6 (0x00007f2504028000)
+	libm.so.6 => /lib64/libm.so.6 (0x00007f2503d26000)
+	libiomp5.so => /home/fren5/psi4conda/lib/libiomp5.so (0x00007f2503906000)
+	libcilkrts.so.5 => /opt/terachem/build_cbbdc78/lib/libcilkrts.so.5 (0x00007f25036c9000)
+	libgcc_s.so.1 => /home/fren5/psi4conda/lib/libgcc_s.so.1 (0x00007f253fac7000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x00007f25034ad000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007f25030df000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f253f8ec000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x00007f2502edb000)
+	libidn.so.11 => /lib64/libidn.so.11 (0x00007f2502ca8000)
+	libssh2.so.1 => /lib64/libssh2.so.1 (0x00007f2502a7b000)
+	libssl3.so => /home/fren5/psi4conda/lib/libssl3.so (0x00007f253fa62000)
+	libsmime3.so => /home/fren5/psi4conda/lib/libsmime3.so (0x00007f253fa38000)
+	libnss3.so => /home/fren5/psi4conda/lib/libnss3.so (0x00007f250294b000)
+	libnssutil3.so => /home/fren5/psi4conda/lib/libnssutil3.so (0x00007f253fa05000)
+	libplds4.so => /home/fren5/psi4conda/lib/libplds4.so (0x00007f253f9ff000)
+	libplc4.so => /home/fren5/psi4conda/lib/libplc4.so (0x00007f253f9f7000)
+	libnspr4.so => /home/fren5/psi4conda/lib/libnspr4.so (0x00007f253f9b4000)
+	libgssapi_krb5.so.2 => /home/fren5/psi4conda/lib/libgssapi_krb5.so.2 (0x00007f253f960000)
+	libkrb5.so.3 => /home/fren5/psi4conda/lib/libkrb5.so.3 (0x00007f2502877000)
+	libk5crypto.so.3 => /home/fren5/psi4conda/lib/libk5crypto.so.3 (0x00007f253f944000)
+	libcom_err.so.2 => /lib64/libcom_err.so.2 (0x00007f2502673000)
+	liblber-2.4.so.2 => /lib64/liblber-2.4.so.2 (0x00007f2502464000)
+	libldap-2.4.so.2 => /lib64/libldap-2.4.so.2 (0x00007f250220f000)
+	libz.so.1 => /home/fren5/psi4conda/lib/libz.so.1 (0x00007f253f925000)
+	libXNVCtrl.so.0 => /lib64/libXNVCtrl.so.0 (0x00007f250200a000)
+	libXext.so.6 => /lib64/libXext.so.6 (0x00007f2501df8000)
+	libX11.so.6 => /lib64/libX11.so.6 (0x00007f2501aba000)
+	libfabric.so.1 => /lib64/libfabric.so.1 (0x00007f2501756000)
+	libpsm_infinipath.so.1 => /lib64/libpsm_infinipath.so.1 (0x00007f2501500000)
+	libpsm2.so.2 => /lib64/libpsm2.so.2 (0x00007f250129a000)
+	librdmacm.so.1 => /lib64/librdmacm.so.1 (0x00007f2501083000)
+	libibverbs.so.1 => /lib64/libibverbs.so.1 (0x00007f2500e6a000)
+	libnl-3.so.200 => /lib64/libnl-3.so.200 (0x00007f2500c49000)
+	libnl-route-3.so.200 => /lib64/libnl-route-3.so.200 (0x00007f25009dc000)
+	librt.so.1 => /lib64/librt.so.1 (0x00007f25007d4000)
+	libifport.so.5 => /opt/intel/oneapi/compiler/2021.3.0/linux/compiler/lib/intel64_lin/libifport.so.5 (0x00007f25005a6000)
+	libifcoremt.so.5 => /opt/intel/oneapi/compiler/2021.3.0/linux/compiler/lib/intel64_lin/libifcoremt.so.5 (0x00007f2500405000)
+	libimf.so => /opt/intel/oneapi/compiler/2021.3.0/linux/compiler/lib/intel64_lin/libimf.so (0x00007f24ffd7d000)
+	libsvml.so => /opt/intel/oneapi/compiler/2021.3.0/linux/compiler/lib/intel64_lin/libsvml.so (0x00007f24fe1fd000)
+	libintlc.so.5 => /opt/intel/oneapi/compiler/2021.3.0/linux/compiler/lib/intel64_lin/libintlc.so.5 (0x00007f24fdf85000)
+	libcublasLt.so.11 => /usr/local/cuda/targets/x86_64-linux/lib/libcublasLt.so.11 (0x00007f24ec9b6000)
+	libcom_err.so.3 => /home/fren5/psi4conda/lib/./libcom_err.so.3 (0x00007f253f91a000)
+	libkrb5support.so.0 => /home/fren5/psi4conda/lib/./libkrb5support.so.0 (0x00007f24ec9a7000)
+	libcrypto.so.1.1 => /home/fren5/psi4conda/lib/./libcrypto.so.1.1 (0x00007f24ec6da000)
+	libresolv.so.2 => /lib64/libresolv.so.2 (0x00007f24ec4c0000)
+	libsasl2.so.3 => /lib64/libsasl2.so.3 (0x00007f24ec2a3000)
+	libxcb.so.1 => /home/fren5/psi4conda/lib/libxcb.so.1 (0x00007f24ec277000)
+	libinfinipath.so.4 => /lib64/libinfinipath.so.4 (0x00007f24ec068000)
+	libuuid.so.1 => /home/fren5/psi4conda/lib/libuuid.so.1 (0x00007f253f911000)
+	libnuma.so.1 => /lib64/libnuma.so.1 (0x00007f24ebe5c000)
+	libcrypt.so.1 => /lib64/libcrypt.so.1 (0x00007f24ebc25000)
+	libXau.so.6 => /lib64/libXau.so.6 (0x00007f24eba21000)
+	libfreebl3.so => /home/fren5/psi4conda/lib/libfreebl3.so (0x00007f24eba1c000)
+#################################################################################################
+
+Cannot find license.dat file in the TeraChem installation directory /opt/terachem/build_cbbdc78
+
+
+TRYING THE NETWORK LICENSE...
+Connecting to license server '54.208.252.40' port '8877'...
+Jobname: perylene
+Connected!
+Checking your license...
+Scratch directory: scr-perylene
+Random number seed: 2017804631
+
+XYZ coordinates perylene.xyz
+Molden File Output: scr-perylene/perylene.molden
+Using basis set: 6-31gs
+dmrgstart not found
+Spin multiplicity: 1
+DIIS will use up to 10 vectors.
+WF convergence threshold: 3.00e-05
+Using DIIS (in Converger class) to converge WF with ADIIS+DIIS as backup
+ADIIS will switch to DIIS when the DIIS error drops below 1.00e-03
+Maximum number of SCF iterations: 100
+Incremental fock with rebuild every 8 iterations
+Will switch to conventional Fock if diffuse functions are detected
+X-matrix tolerance: 1.00e-04
+PRECISION: DYNAMIC
+DFT Functional requested: wb97xd3
+Method: wB97X-D3
+  wB97X-D3 exchange/correlation functional:  1.0
+  Full range Hartree-Fock exchange:          0.195728
+  LR Hartree-Fock exchange:                  0.804272
+  Range Correction Scaling:                  0.250 a.u. 
+Wavefunction: RESTRICTED
+
+ DFT-D code reimplemented following the
+ code by S.Grimme, University Bonn 
+ based on DFTD3 V3.2 Rev 0         
+ 
+Please cite DFT-D3 work done with this code as:
+S. Grimme, J. Antony, S. Ehrlich and H. Krieg,
+J. Chem. Phys. 132 (2010), 154104
+If used with BJ-damping cite also
+S. Grimme, S. Ehrlich and L. Goerigk,
+J. Comput. Chem. 32 (2011), 1456-1465
+For DFT-D2 the reference is
+S. Grimme, J. Comput. Chem., 27 (2006), 1787-1799
+DFT grid type: 1
+Using a single DFT grid.
+Initial guess generated by maximum overlap
+
+********************************************
+***** SINGLE POINT ENERGY CALCULATIONS *****
+********************************************
+
+using 1 out of 1 CUDA devices
+   Device 0:     NVIDIA RTX A4000, 16117MB, CC 8.6 -- CPU THREAD 0
+-------------------------------------------------------------------
+ CPU Memory Available: 23990.50 MegaWords 
+ GPU Memory Available: 1758.66 MegaWords 
+ Maximum recommended basis set size: 15300 basis functions
+ (limited by GPU memory)
+-------------------------------------------------------------------
+
+**************************************************************
+  Greetings, Martinez Group! You have 1000 licenses in total
+  IN USE: 28
+  AVAILABLE: 972
+**************************************************************
+
+
+
+Basis set:       6-31gs
+Total atoms:     32
+Total charge:    0
+Total electrons: 132 (66-alpha, 66-beta)
+Number electrons modeled by ECPs: 0
+Total orbitals: 324 (Cartesian), 304 (spherical) 
+Total AO shells: 144 (84 S-shells; 40 P-shells; 20 D-shells; 0 F-shells; 0 G-shells)
+Spin multiplicity: 1
+Nuclear repulsion energy (QM atoms): 1368.552172138071 a.u.
+
+DFTD Energy:    -0.0133254 hartree
+Setting up the DFT grid...
+time to set the grid = 0.03 s
+DFT grid points: 86758 (2711 points/atom)
+
+                      *** Start SCF Iterations ***
+
+ Iter     DIIS Error       Energy change      Electrons        XC Energy           Energy        Time(s)
+----------------------------------------------------------------------------------------------------------
+Purifying guess...Density matrix is not well-conditioned, rescale and purify
+Purification run on GPU (mixed precision)  using TC2 purification.
+Density matrix purification finished after a total of 13 matrix multiplies
+THRESPDP set to 1.00e+00
+   1     0.5704021956    -763.7310132352   132.0614500808   -74.2245853840    -763.7310132352     1.56  
+   2     0.2427479470      -4.2766270506   132.0017461449   -78.9614940424    -768.0076402857     0.40  
+   3     0.1238973903      -0.9478806598   132.0019165904   -77.6661575151    -768.9555209455     0.39  
+   4     0.0553818041      -0.1918228352   132.0018535770   -77.6533883162    -769.1473437807     0.39  
+   5     0.0092733155      -0.0271752623   132.0018059626   -77.7078260562    -769.1745190430     0.38  
+   6     0.0047038860      -0.0010908629   132.0017912071   -77.7106560927    -769.1756099059     0.37  
+   7     0.0012358686      -0.0002102663   132.0017897562   -77.7094833698    -769.1758201722     0.36  
+THRESPDP set to 2.97e-03
+   8     0.0007786925      -0.0000041248   132.0017949571   -77.7097817164    -769.1758242970     0.66  
+   9     0.0002213117      -0.0000056820   132.0017951518   -77.7100063336    -769.1758299789     0.53  
+  10     0.0000885222      -0.0000013046   132.0017954442   -77.7100380183    -769.1758312835     0.52  
+  11     0.0000414278      +0.0000000544   132.0017955008   -77.7100242948    -769.1758312291     0.51  
+  12     0.0000098162      +0.0000000365   132.0017954830   -77.7100209279    -769.1758311926     0.49  
+----------------------------------------------------------------------------------------------------------
+FINAL ENERGY: -769.1758311926 a.u.
+DFTD Dispersion Correction: -0.0133253875 a.u.
+HOMO-LUMO GAP: 6.783 eV
+CENTER OF MASS: {-0.002940, -0.000001, -0.043448} ANGS
+DIPOLE MOMENT: {0.000896, -0.000013, -0.007787} (|D| = 0.007839) DEBYE
+Writing out molden info
+
+Running Mulliken population analysis...
+
+
+  Restricted CIS Parameters
+--------------------------------------------
+Number of occupied orbitals:            66
+Number of virtual orbitals:            238
+Number of molecular orbitals:          304
+Number of basis functions:             324
+Multiplicity of target state:      singlet
+
+ Generating 2nd functional diffs
+      Davidson Diagonalization Parameters
+-----------------------------------------------
+Number of roots to find:                    5
+Number of guess vectors:                    5
+Maximum subspace size:                     25
+Number of vectors to save:                  5
+Collapse vectors per root:                  2
+Number of CSFs:                         15708
+Maximum Davidson iterations:               20
+Residual convergence:                 1.0e-04
+Orthogonality tolerance:              1.0e-12
+Use incremental sigma vectors:             No
+
+  Nonsymmetric Davidson Dynamic Precision Parameters
+------------------------------------------------------
+SP Residual convergence:              1.0e-04
+Sigma vector THRESPDP:                5.2e-04
+
+Davidson memory usage:   6.43 MB
+
+Guess Vectors:
+  66 ->  67 : D -> V :     0.249275
+  66 ->  68 : D -> V :     0.310613
+  65 ->  67 : D -> V :     0.318508
+  64 ->  67 : D -> V :     0.322677
+  66 ->  69 : D -> V :     0.325936
+
+  Root           Eigenvalue       Energy Change        Residual
+-------------------------------------------------------------------
+Iteration:    0   Subspace Size:    5
+Root: 1:         0.15503691         0.15503691         0.12958643  
+Root: 2:         0.17116034         0.17116034         0.05176895  
+Root: 3:         0.19238556         0.19238556         0.08553928  
+Root: 4:         0.21894754         0.21894754         0.12427109  
+Root: 5:         0.22813808         0.22813808         0.14806779  
+
+Iteration:    1   Subspace Size:   10
+Root: 1:         0.13675696        -0.01827995         0.02901628  
+Root: 2:         0.15871597        -0.01244437         0.02513187  
+Root: 3:         0.18240783        -0.00997773         0.02987445  
+Root: 4:         0.18688276        -0.03206477         0.06413008  
+Root: 5:         0.20323779        -0.02490029         0.02911785  
+
+Iteration:    2   Subspace Size:   15
+Root: 1:         0.13491006        -0.00184690         0.01271177  
+Root: 2:         0.15803980        -0.00067617         0.00635977  
+Root: 3:         0.16960081        -0.01280703         0.03663810  
+Root: 4:         0.17827350        -0.00860926         0.01994392  
+Root: 5:         0.19994199        -0.00329580         0.02171221  
+
+Iteration:    3   Subspace Size:   20
+Root: 1:         0.13465588        -0.00025418         0.00562727  
+Root: 2:         0.15798978        -0.00005002         0.00165661  
+Root: 3:         0.16766253        -0.00193828         0.01073314  
+Root: 4:         0.17586024        -0.00241326         0.01596020  
+Root: 5:         0.19658537        -0.00335661         0.02465963  
+
+Iteration:    4   Subspace Size:   25
+Root: 1:         0.13461065        -0.00004522         0.00162836  
+Root: 2:         0.15798628        -0.00000350         0.00046823  
+Root: 3:         0.16749655        -0.00016598         0.00425050  
+Root: 4:         0.17539818        -0.00046207         0.00617736  
+Root: 5:         0.19518816        -0.00139721         0.01224019  
+Collapsing subspace to 10 vectors
+
+Iteration:    5   Subspace Size:   10
+Root: 1:         0.13461065         0.00000000         0.00162836  
+Root: 2:         0.15798628         0.00000000         0.00046823  
+Root: 3:         0.16749655        -0.00000000         0.00425050  
+Root: 4:         0.17539818        -0.00000000         0.00617736  
+Root: 5:         0.19518816         0.00000000         0.01224019  
+
+Iteration:    6   Subspace Size:   15
+Root: 1:         0.13460766        -0.00000299         0.00051158  
+Root: 2:         0.15798606        -0.00000022         0.00013215  
+Root: 3:         0.16747425        -0.00002230         0.00153212  
+Root: 4:         0.17535647        -0.00004171         0.00202013  
+Root: 5:         0.19501195        -0.00017622         0.00445249  
+
+Iteration:    7   Subspace Size:   20
+Root: 1:         0.13460717        -0.00000050         0.00023512  
+Root: 2:         0.15798604        -0.00000002         0.00002762  Converged
+Root: 3:         0.16746810        -0.00000615         0.00089765  
+Root: 4:         0.17535246        -0.00000401         0.00044751  
+Root: 5:         0.19499169        -0.00002025         0.00105918  
+
+Iteration:    8   Subspace Size:   24
+Root: 1:         0.13460712        -0.00000004         0.00004515  Converged
+Root: 2:         0.15798604        -0.00000000         0.00002754  Converged
+Root: 3:         0.16746716        -0.00000093         0.00021643  
+Root: 4:         0.17535230        -0.00000016         0.00011259  
+Root: 5:         0.19499070        -0.00000099         0.00028376  
+
+Iteration:    9   Subspace Size:   25
+Root: 1:         0.13460712        -0.00000000         0.00004515  Converged
+Root: 2:         0.15798604        -0.00000000         0.00002754  Converged
+Root: 3:         0.16746709        -0.00000007         0.00008103  Converged
+Root: 4:         0.17535230        -0.00000000         0.00011258  
+Root: 5:         0.19499070        -0.00000000         0.00028376  
+Collapsing subspace to 7 vectors
+
+Iteration:   10   Subspace Size:    7
+Root: 1:         0.13460712         0.00000000         0.00004515  Converged
+Root: 2:         0.15798604        -0.00000000         0.00002754  Converged
+Root: 3:         0.16746709         0.00000000         0.00008103  Converged
+Root: 4:         0.17535230         0.00000000         0.00011258  
+Root: 5:         0.19499070         0.00000000         0.00028376  
+
+Iteration:   11   Subspace Size:    9
+Root: 1:         0.13460712        -0.00000000         0.00004515  Converged
+Root: 2:         0.15798604        -0.00000000         0.00002756  Converged
+Root: 3:         0.16746709        -0.00000000         0.00008102  Converged
+Root: 4:         0.17535228        -0.00000002         0.00004448  Converged
+Root: 5:         0.19499060        -0.00000011         0.00010891  
+
+Iteration:   12   Subspace Size:   10
+Root: 1:         0.13460712        -0.00000000         0.00004515  Converged
+Root: 2:         0.15798604        -0.00000000         0.00002670  Converged
+Root: 3:         0.16746709        -0.00000000         0.00008102  Converged
+Root: 4:         0.17535228        -0.00000000         0.00001801  Converged
+Root: 5:         0.19499057        -0.00000003         0.00003810  Converged
+
+Davidson has converged in single precision
+Collapsing subspace to 5 vectors
+Rebuilding sigma vectors in mixed precision
+
+Iteration:   13   Subspace Size:    5
+Root: 1:         0.13460712        -0.00000001         0.00004550  Converged
+Root: 2:         0.15798601        -0.00000003         0.00002710  Converged
+Root: 3:         0.16746708        -0.00000002         0.00008115  Converged
+Root: 4:         0.17535227        -0.00000002         0.00001873  Converged
+Root: 5:         0.19499058         0.00000001         0.00003848  Converged
+
+Davidson converged in 13 iterations
+48 sigma vectors were formed
+43 sigma vectors were formed in single precision
+5 sigma vectors were formed in mixed precision
+
+  Root   Total Energy (a.u.)   Ex. Energy (a.u.)     Ex. Energy (eV)     Ex. Energy (nm)
+-----------------------------------------------------------------------------------------
+     1       -769.04122408          0.13460712          3.66284536        338.49155110
+     2       -769.01784518          0.15798601          4.29901732        288.40130523
+     3       -769.00836412          0.16746708          4.55701027        272.07360364
+     4       -769.00047893          0.17535227          4.77157712        259.83907932
+     5       -768.98084061          0.19499058          5.30596285        233.66959823
+
+Unrelaxed excited state dipole moments:
+
+  Root       Dx         Dy         Dz         |D|  (Debye)
+------------------------------------------------------------
+     1     0.0014    -0.0001    -0.0079     0.0081
+     2     0.0013    -0.0000    -0.0087     0.0088
+     3     0.0002    -0.0000    -0.0081     0.0081
+     4     0.0010    -0.0000    -0.0091     0.0091
+     5     0.0006    -0.0000    -0.0076     0.0077
+
+Transition dipole moments:
+
+  Root       Tx         Ty         Tz         |T| (a.u.)
+----------------------------------------------------------
+     1    -2.7296    -0.0000     0.0084     2.7296
+     2    -0.0000    -0.0001    -0.0000     0.0001
+     3    -0.0000    -0.1750     0.0000     0.1750
+     4    -0.0000    -0.0000     0.0000     0.0000
+     5    -0.0000    -0.0003     0.0001     0.0003
+
+Transition dipole moments between excited states:
+
+    Transition       Tx         Ty         Tz         |T| (a.u.)
+------------------------------------------------------------------
+     1 ->    2    -0.0001    -0.1512     0.0000     0.1512
+     1 ->    3     0.0000    -0.0003     0.0001     0.0003
+     1 ->    4     0.0000    -0.5003     0.0000     0.5003
+     1 ->    5    -0.0000     3.5628    -0.0001     3.5628
+     2 ->    3     0.0964    -0.0000    -0.0002     0.0964
+     2 ->    4    -0.0005    -0.0000     0.0014     0.0015
+     2 ->    5    -0.0005     0.0000    -0.0000     0.0005
+     3 ->    4    -0.9777     0.0000     0.0030     0.9777
+     3 ->    5    -0.6834     0.0000     0.0019     0.6834
+     4 ->    5    -0.0002    -0.0000     0.0017     0.0018
+
+Velocity transition dipole moments:
+
+  Root       Tx         Ty         Tz         |T| (a.u.)
+----------------------------------------------------------
+     1     0.0104    -0.0000    -0.0000     0.0104
+     2     0.0000    -0.0000     0.0000     0.0000
+     3     0.0000    -0.0128     0.0000     0.0128
+     4    -0.0000    -0.0000     0.0000     0.0000
+     5     0.0000    -0.0000    -0.0000     0.0000
+
+Magnetic transition dipole moments and rotational strengths:
+
+  Root       Lx         Ly         Lz       R(len)     R(vel) (a.u.)
+--------------------------------------------------------------------
+     1    -0.0000    -0.0004    -0.0000    -0.0000    -0.0000
+     2     0.0024     0.0000     0.8040     0.0000     0.0000
+     3     0.0000     0.0000    -0.0004     0.0000    -0.0000
+     4    -0.0098    -0.0000    -3.2387     0.0001    -0.0001
+     5    -0.0008    -0.0000    -0.2622     0.0000     0.0000
+
+
+Electric transition quadrupole moments (Cartesian):
+
+   Root       Qxy        Qxz        Qyz        Qxx        Qyy        Qzz       norm (a.u.)
+--------------------------------------------------------------------------------------------
+     1    -0.0000    -0.0059    -0.0006     0.0003     0.0010     0.0001     0.0060
+     2    -1.0547     0.0000     0.0033    -0.0004     0.0000    -0.0000     1.0547
+     3     0.0008     0.0000     0.0015    -0.0001    -0.0000     0.0000     0.0017
+     4    -0.4723     0.0000     0.0017     0.0008    -0.0001     0.0000     0.4723
+     5     4.1061    -0.0001    -0.0122     0.0004    -0.0003     0.0000     4.1061
+
+Root 1: Largest CI coefficients:
+  66 ->  67 : D -> V :  -0.971365
+  65 ->  68 : D -> V :  -0.132036
+  63 ->  71 : D -> V :  -0.103159
+  64 ->  70 : D -> V :   0.086218
+  66 ->  74 : D -> V :   0.036066
+  58 ->  67 : D -> V :  -0.035277
+  62 ->  69 : D -> V :  -0.032899
+  60 ->  94 : D -> V :   0.024211
+  46 ->  70 : D -> V :   0.022868
+  54 ->  75 : D -> V :  -0.021610
+  52 ->  68 : D -> V :  -0.021604
+  60 ->  95 : D -> V :  -0.021444
+  55 ->  89 : D -> V :  -0.021441
+  40 ->  75 : D -> V :  -0.019540
+  60 ->  81 : D -> V :  -0.018996
+  51 ->  89 : D -> V :   0.017948
+  62 ->  68 : D -> V :  -0.016730
+  60 ->  75 : D -> V :  -0.016682
+  48 ->  88 : D -> V :  -0.016341
+  40 ->  83 : D -> V :   0.016291
+  55 ->  78 : D -> V :  -0.016261
+  64 ->  92 : D -> V :   0.016254
+  41 ->  73 : D -> V :  -0.016067
+  65 ->  84 : D -> V :  -0.016006
+  47 ->  87 : D -> V :   0.015773
+  65 ->  69 : D -> V :   0.015315
+  57 -> 100 : D -> V :  -0.015146
+  50 -> 107 : D -> V :  -0.014861
+  59 ->  72 : D -> V :  -0.014458
+  55 ->  73 : D -> V :   0.014145
+  57 -> 101 : D -> V :  -0.014027
+  51 ->  73 : D -> V :  -0.014023
+  54 ->  81 : D -> V :  -0.013556
+  47 ->  73 : D -> V :  -0.013058
+  51 ->  82 : D -> V :   0.012994
+  58 ->  74 : D -> V :   0.012835
+  45 -> 122 : D -> V :   0.012316
+  54 ->  98 : D -> V :  -0.012249
+  44 ->  80 : D -> V :   0.012102
+  57 ->  77 : D -> V :   0.011398
+  47 ->  78 : D -> V :   0.011288
+  61 ->  91 : D -> V :   0.011234
+  61 -> 103 : D -> V :   0.011077
+  54 ->  94 : D -> V :  -0.011026
+  47 ->  82 : D -> V :   0.010987
+  53 ->  85 : D -> V :   0.010804
+  61 ->  86 : D -> V :  -0.010801
+  49 -> 102 : D -> V :   0.010738
+  37 ->  77 : D -> V :   0.010262
+  49 ->  99 : D -> V :   0.010178
+
+Root 2: Largest CI coefficients:
+  66 ->  68 : D -> V :   0.730385
+  65 ->  67 : D -> V :  -0.574357
+  63 ->  70 : D -> V :   0.206667
+  64 ->  71 : D -> V :   0.200333
+  66 ->  69 : D -> V :   0.171147
+  62 ->  67 : D -> V :   0.084106
+  62 ->  74 : D -> V :  -0.074632
+  58 ->  69 : D -> V :   0.073716
+  66 ->  84 : D -> V :   0.038310
+  52 ->  67 : D -> V :  -0.031118
+  59 ->  79 : D -> V :  -0.029929
+  56 ->  72 : D -> V :   0.027820
+  56 ->  70 : D -> V :  -0.017611
+  59 ->  71 : D -> V :   0.014295
+  63 ->  72 : D -> V :   0.012968
+  46 ->  71 : D -> V :   0.011577
+  64 ->  79 : D -> V :   0.011246
+  63 ->  92 : D -> V :   0.010464
+  65 ->  74 : D -> V :  -0.010244
+
+Root 3: Largest CI coefficients:
+  64 ->  67 : D -> V :  -0.692435
+  66 ->  70 : D -> V :  -0.612869
+  63 ->  68 : D -> V :  -0.263261
+  65 ->  71 : D -> V :   0.242134
+  56 ->  69 : D -> V :   0.061234
+  62 ->  79 : D -> V :  -0.054417
+  59 ->  74 : D -> V :  -0.045633
+  62 ->  71 : D -> V :   0.043903
+  58 ->  72 : D -> V :   0.040869
+  46 ->  67 : D -> V :  -0.031605
+  63 ->  69 : D -> V :   0.028569
+  52 ->  71 : D -> V :   0.021776
+  66 ->  92 : D -> V :  -0.018891
+  63 ->  84 : D -> V :  -0.017504
+  56 ->  68 : D -> V :   0.011207
+
+Root 4: Largest CI coefficients:
+  66 ->  69 : D -> V :  -0.682663
+  62 ->  67 : D -> V :   0.509676
+  65 ->  67 : D -> V :  -0.411060
+  66 ->  68 : D -> V :  -0.240365
+  64 ->  71 : D -> V :   0.122246
+  52 ->  67 : D -> V :  -0.101728
+  66 ->  84 : D -> V :  -0.071050
+  63 ->  70 : D -> V :  -0.059362
+  62 ->  74 : D -> V :  -0.042127
+  63 ->  72 : D -> V :   0.040817
+  58 ->  69 : D -> V :  -0.036767
+  61 ->  88 : D -> V :  -0.016359
+  46 ->  71 : D -> V :   0.014359
+  48 ->  99 : D -> V :  -0.014124
+  48 ->  86 : D -> V :  -0.013058
+  44 -> 105 : D -> V :  -0.012925
+  46 ->  79 : D -> V :  -0.012634
+  37 ->  80 : D -> V :  -0.012463
+  48 ->  76 : D -> V :  -0.011486
+  59 ->  71 : D -> V :  -0.011328
+  53 ->  86 : D -> V :  -0.011273
+  53 ->  80 : D -> V :  -0.010572
+  60 -> 104 : D -> V :   0.010428
+  33 ->  88 : D -> V :  -0.010346
+  56 ->  92 : D -> V :  -0.010256
+  66 -> 108 : D -> V :  -0.010056
+
+Root 5: Largest CI coefficients:
+  66 ->  69 : D -> V :   0.666117
+  62 ->  67 : D -> V :   0.648481
+  66 ->  68 : D -> V :  -0.304202
+  65 ->  67 : D -> V :  -0.128836
+  63 ->  72 : D -> V :  -0.099020
+  59 ->  71 : D -> V :  -0.077880
+  64 ->  71 : D -> V :  -0.048348
+  63 ->  70 : D -> V :  -0.043565
+  65 ->  74 : D -> V :   0.041550
+  52 ->  67 : D -> V :  -0.040885
+  58 ->  84 : D -> V :   0.018076
+  52 ->  74 : D -> V :   0.017240
+
+  Final Excited State Results:
+
+  Root   Total Energy (a.u.)   Ex. Energy (eV)   Osc. (a.u.)   < S^2 >   Max CI Coeff.      Excitation
+------------------------------------------------------------------------------------------------------------
+     1        -769.04122408        3.66284536       0.6686      0.0000     -0.971365     66 ->  67 : D -> V
+     2        -769.01784518        4.29901732       0.0000      0.0000      0.730385     66 ->  68 : D -> V
+     3        -769.00836412        4.55701027       0.0034      0.0000     -0.692435     64 ->  67 : D -> V
+     4        -769.00047893        4.77157712       0.0000      0.0000     -0.682663     66 ->  69 : D -> V
+     5        -768.98084061        5.30596285       0.0000      0.0000      0.666117     66 ->  69 : D -> V
+
+Total processing time: 37.52 sec 
+
+ Job finished: Wed Jan 24 11:34:19 2024
+
