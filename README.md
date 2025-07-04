@@ -4,29 +4,32 @@
 Fangning Ren, Xu Chen, Fang Liu
 
 ## Dependencies
-The code was developed and tested on Python 3.8.20 using CUDA 12.4 with the following Python packages installed:
-- python       == 3.8.20
-- pytorch      == 2.4.1(build py3.8_cuda12.4_cudnn9_0)
-- tensorboard  == 2.10.0
-- torchani     == 2.2
-- pandas       == 2.0.3
-- mdtraj       == 1.10.0
-- numba        == 0.58.1
-- tqdm         == 4.66.2
-- h5py         == 3.11.0
-- matplotlib   == 3.2.2
+The code was developed and tested on Python 3.12 with the following packages:
+- **python** >= 3.12.0  
+- **pytorch** = 2.7.1  
+- **tensorboard** >= 2.10.0  
+- **torchani** == 2.2  
+- **pandas** >= 2.0.3  
+- **mdtraj** >= 1.10.0  
+- **numba** >= 0.58.0  
+- **tqdm** >= 4.66.2  
+- **h5py** >= 3.11.0  
+- **matplotlib** >= 3.2.2  
+- **jupyterlab**  
+- **ipykernel**  
+- **python-dotenv**  
 
 ## Folder structure
 Folder structure:
 ```
-├── locense.md
+├── license.md
 ├── nnp_dataset.py
 ├── nnp_models.py
 ├── nnp_train.py
 ├── predict_large_aggregates.ipynb
 ├── predict_oscillator_strength.ipynb
 ├── README.md
-├── requirements.yaml
+├── environment.yaml
 ├── data/
 │   ├── datasets-ani/
 │   │   # training sets in compressed 'hdf5' format for model training

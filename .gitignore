@@ -1,0 +1,13 @@
+# Ignore all .h5 files. They are very large.
+*.h5
+
+# Ignore Python temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py~ 
+*.tmp
+*.swp
+*.bak
+*.orig
