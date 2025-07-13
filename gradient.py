@@ -17,30 +17,51 @@ from torchani.aev import AEVComputer
 from nnp_dataset import *
 from nnp_models import *
 
-# Use FR's loss function to compute loss and evaluate gradients wrt coordinates
-def compute_losses(
-        target:torch.Tensor, 
-        predit:torch.Tensor,
-        current_term_loss:OrderedDict,
-    ):
-    losses = (predit - target) ** 2
-    for i, key in enumerate(current_term_loss.keys()):
-        current_term_loss[key] += losses[:, i].sum().item()
-    total_loss = (losses.sum() / (target.shape[0] * target.shape[1])) ** 0.5    # RMSE
-    return total_loss
+def compute_numerical_gradient(model, species, coordinates, belongings, approx, epsilon=1.0e-4):
+    # Ensure coordinates is a torch tensor
+    
+    coordinates = coordinates.clone().detach().requires_grad_(False)
+    #print("Coordinates shape:", coordinates.shape)
+    #coordinates = coordinates[0] # squeeze the batch_size
+    #print("Coordinates shape2 :", coordinates.shape)
+    
+    batch_size, N_atoms, dim = coordinates.shape
+    #N_atoms, dim = coordinates.shape
+    #print("Coordinates shape3:", coordinates.shape)
+    #print("The number of atoms:")
+    #print(N_atoms)
+    #print("Dimesnions")
+    #print(dim)
+    
+    print("\n\n")
+    grad = torch.zeros_like(coordinates)
+    print("Espilon value: ", epsilon)
+    # Loop over each coordinate component
+    for b in range(batch_size):
+        for i in range(N_atoms):
+            for j in range(dim):
+                # Perturb in + direction
+                coords_plus = coordinates.clone()
+                coords_plus[b, i, j] += epsilon
 
-def plot_image(target, predict, terms, filename):
-    fig, axs = plt.subplots(3, 3, figsize = (10, 10), dpi = 200)
-    axs = axs.ravel()
-    fig.subplots_adjust(wspace=0.1, hspace=0.1)
-    for i, (ax, t, p) in enumerate(zip(axs, target.T, predict.T)):
-        ax.scatter(t, p, s = 1, alpha = 0.1)
-        ax.plot([t.min(), t.max()], [t.min(), t.max()], color = "black", linestyle = "--")
-        ax.text(0.05, 0.95, terms[i], transform=ax.transAxes, fontsize=8, verticalalignment='top')
-        ax.tick_params(direction='in')
-    plt.savefig(filename, bbox_inches='tight')
-    plt.close()
-    plt.clf()
+                mask = [True, False, False, False,False, False, False, False]
+                # From a list
+                tensor_from_list = torch.tensor(mask)
+                #print(f"Tensor from list: {mask}")
+                E_plus = model(species, coords_plus, belongings, approx)
+                E_plus_1e1g = torch.masked_select(E_plus, tensor_from_list)
+
+                # Perturb in - direction
+                coords_minus = coordinates.clone()
+                coords_minus[b, i, j] -= epsilon
+                E_minus = model(species, coords_minus, belongings, approx)
+                E_minus_1e1g = torch.masked_select(E_minus, tensor_from_list)
+                # Central difference
+                #print("The gradient of", b, "st batch_size: ")
+                grad[b, i, j] = (E_plus_1e1g - E_minus_1e1g) / (2 * epsilon)
+    print("The numerical gradient of the above coordinates are given by: ")
+    print(grad)
+    return grad
 
 if __name__ == "__main__":
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -56,7 +77,7 @@ if __name__ == "__main__":
     torch.manual_seed(seed)
     np.random.seed(seed)
 
-    batch_size      = 64
+    batch_size      = 1
     nepoch          = 1
     save_interval   = 100
     learning_rate   = 1.0e-3
@@ -125,14 +146,15 @@ if __name__ == "__main__":
 
     for name, param in model.named_parameters():
         #if param.requires_grad:
-        print(name, param.shape)
+        # print(name, param.shape)
+        pass
 
     # Attempting to print only monomeric elements: 
-    print("Attempt to print only the monomer elements")
-    print(model.ele_nnp.monomer_model.element_network[:][:])
+    # print("Attempt to print only the monomer elements")
+    # print(model.ele_nnp.monomer_model.element_network[:][:])
     
     first_linear = model.ele_nnp.monomer_model.element_network[0]
-    print(first_linear.weight[:, 0])
+    # print(first_linear.weight[:, 0])
 
     # Use param to print elements in model
     print("Gradient calculation: STEP 3: LOAD FILE using eval")
@@ -143,10 +165,8 @@ if __name__ == "__main__":
     # 64 parameters tensors are avaiable: I believe this is 8*8
     for param in model.parameters():
         #print(param)
-        zz = 1
-        
-    batch_size = 64
-    nepoch          = 3
+        pass
+
     save_interval   = 100
     learning_rate   = 1.0e-3
 
@@ -170,16 +190,19 @@ if __name__ == "__main__":
     species_order = ["H", "C",]
 
     training, validation = create_datasets(dspaths, target_property, approx_property, species_order, align_coupling_sign = False)
-    training_loader   = DataLoader(training, batch_size=batch_size, shuffle=True, num_workers=1)
+    training_loader   = DataLoader(training, batch_size=batch_size, shuffle=False, num_workers=1)
     training_loader_ = training_loader if device != "cpu" else tqdm.tqdm(training_loader)
 
     predits = []
     targets = []
     
-    print("The coordinates are being printed")
+    
+    print("\n\nBelow, the coordinates are printed followed with numerical and autodiff graidents \n\n")
+
     for batch_idx, batch in enumerate(training_loader_):
             training_term_loss = OrderedDict({t: 0.0 for t in target_property})
             coordinates = batch["coordinates"].to(device).to(device).float().requires_grad_(True)
+            print("Coordinates for batch_idx: ", batch_idx, "\n\n")
             print(coordinates)
 
             # There are 600 coordinates tensors
@@ -190,24 +213,44 @@ if __name__ == "__main__":
             belongings  = batch["belongings"] .to(device)
             approx      = batch["approxs"]    .to(device)
             target      = batch["targets"]    .to(device)
+
+            #print("Coordinates shape:", coordinates.shape)
+            #N_atoms, dim = coordinates.shape
+            #print("Coordinates shape:", coordinates.shape)
+            #print("The number of atoms:")
+            #print(N_atoms)
+            #print("Dimesnions")
+            #print(dim)
+            # Code to compute numerical gradients: 
+            
+            # Compute and Print the numerical gradients
+            #print("batch: ", batch)
+            epsilon = 1.0e-4
+            gradients = compute_numerical_gradient(model, species, coordinates, belongings, approx, epsilon)
+            #print(gradients)
+            
+
+
             output = model(species, coordinates, belongings, approx)
-            loss = compute_losses(target, output, training_term_loss)
+            #loss = compute_losses(target, output, training_term_loss)
             #print(loss)
-            
             # It had computed 600 losses. 
-            # print(output)
+            #print("The output of model: ")
+            #print(output)
+            mask = [True, False, False, False,False, False, False, False]
+            # From a list
+            tensor_from_list = torch.tensor(mask)
+            #print(f"Tensor from list: {mask}")
+            loss = torch.masked_select(output, tensor_from_list)
+            #print(loss)
             #output.backward() only on a scalar quantity
-            
             loss.backward()
-            
-            print("The following are the gradients: obtained from model using perylene-best.pt, coordinates;")
-            print("USING AUTODIFF>>>>>")
-            
+            print("The following are the gradients obtained USING AUTODIFF:")
             print(coordinates.grad)
             
             #print("END OF GRADIENTS!")
             #plot_image(loss.detach().numpy(), coordinates.grad.numpy(), target_property, f"images/{batch}-perylene-best.png")
-
+            print("\n\n\n\n\n")
     #plot_image(targets.cpu().numpy(), output.cpu().numpy(), target_property, f"images/gradients.png")
     
        
